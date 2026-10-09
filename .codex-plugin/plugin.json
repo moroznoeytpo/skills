@@ -1,0 +1,15 @@
+{
+  "name": "agentic-project-harness",
+  "version": "1.0.0",
+  "description": "Переносимые навыки Agentic Project Harness: установка, классификация задач, независимое review и обновление знаний.",
+  "author": {
+    "name": "moroznoeytpo"
+  },
+  "repository": "https://github.com/moroznoeytpo/skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agentic Project Harness",
+    "shortDescription": "Процесс разработки и актуальные знания проекта",
+    "developerName": "moroznoeytpo"
+  }
+}

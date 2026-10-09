@@ -1,0 +1,62 @@
+# Только initial bootstrap до helpers: подставить реальные поля, level/gates и Git identity.
+# При доступном bootstrap_task.py использовать create; не копировать даты или approvals.
+version: 1
+revision: 1
+task: ${TASK}
+title: ${TITLE}
+external_id: null
+level: trivial
+classification:
+  reason: ${REASON}
+  signals: {}
+  history: []
+state: created
+current_step: null
+resume_state: null
+created_at: ${NOW}
+updated_at: ${NOW}
+scope: ${SCOPE}
+scope_paths: []
+next_action: Определить scope и шаги; пересмотреть level по фактическим признакам
+repository:
+  base_commit: null
+  checkout: ${CHECKOUT}
+steps: []
+approvals:
+  spec:
+    status: not_required
+    reason: trivial
+  plan:
+    status: not_required
+    reason: trivial
+  final:
+    status: not_required
+    reason: trivial
+verification:
+  status: pending
+  evidence: []
+  scope_fingerprint: null
+  limitations: []
+review:
+  status: not_required
+  mode: null
+  reason: trivial
+  evidence: []
+knowledge_update:
+  status: pending
+  impact:
+    project: unknown
+    architecture: unknown
+    adr: unknown
+    lessons: unknown
+    agent_rules: unknown
+  rationale: {}
+  changes: []
+  notification: null
+progress:
+  last_progress_at: ${NOW}
+  last_observed_at: ${NOW}
+  last_action: Initial bootstrap
+wait: null
+blocker: null
+history: []

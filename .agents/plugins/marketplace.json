@@ -1,0 +1,20 @@
+{
+  "name": "moroznoeytpo-skills",
+  "interface": {
+    "displayName": "moroznoeytpo skills"
+  },
+  "plugins": [
+    {
+      "name": "agentic-project-harness",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

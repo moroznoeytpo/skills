@@ -1,0 +1,7 @@
+# Единый стиль всего собственного Python; generated/vendor не редактируются вручную.
+target-version = "py311"
+line-length = 100
+extend-exclude = [".worktrees", ".superpowers", "static", "dist", "vendor"]
+
+[lint]
+select = ["E4", "E7", "E9", "F", "I"]

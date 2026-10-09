@@ -1,0 +1,37 @@
+harness_version: 1
+schema_version: 1
+timezone: UTC
+timeouts:
+  short:
+    check_every_seconds: 15
+    deadline_seconds: 60
+  normal:
+    check_every_seconds: 60
+    deadline_seconds: 300
+  long:
+    check_every_seconds: 60
+    deadline_seconds: 1200
+  external:
+    check_every_seconds: 60
+    deadline_seconds: 3600
+stall_policy:
+  max_auto_retries: 2
+  max_auto_extensions: 2
+  extension_factor: 1
+ci:
+  mode: warn
+production_paths:
+- src
+exclude_paths:
+- .ai/tasks
+- tests
+- docs
+knowledge_paths:
+- .ai/project.md
+- .ai/architecture
+- .ai/decisions
+- .ai/lessons
+- AGENTS.md
+- .ai/README.md
+- .ai/skills.md
+policy_exceptions: []

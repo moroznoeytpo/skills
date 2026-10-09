@@ -1,0 +1,3 @@
+# Install / update / audit
+
+Audit и dry-run read-only. Install добавляет отсутствующие files; existing harness не переустанавливается. Update показывает diff и сохраняет любой изменённый экземпляр как conflict. Ручной marker content не разрешено перезаписывать. В v1 нет сложного merge engine или отдельного manifest. Версии в workflow.yaml; более новая схема отвергается без записи. Project-specific knowledge не входит в assets. Переносится только package; A/B/C выполняются заново. Assets/root каноничен для runtime helpers и трёх skills, tests проверяют отсутствие drift. Package не копируется рекурсивно в assets.
