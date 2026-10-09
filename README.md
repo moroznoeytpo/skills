@@ -18,6 +18,8 @@ git clone https://github.com/moroznoeytpo/skills.git ~/.codex/skill-repositories
 Из `skills/` создайте четыре ссылки с соответствующими именами в `~/.codex/skills/`.
 Не заменяйте существующие каталоги или ссылки без сравнения. Соседние ссылки сохраняют относительные references между навыками. После изменения состава начните новую сессию Codex; чтение файла не доказывает автоматическое discovery.
 
+Свежий Codex `skills/list` обнаруживает навыки с префиксом `agentic-project-harness:`, например `agentic-project-harness:classifying-development-task`; canonical пути указывают на этот checkout после разрешения ссылок.
+
 Обновление: `git -C ~/.codex/skill-repositories/skills pull --ff-only` после проверки локального status. Не редактируйте plugin cache.
 
 ## Плагин Codex

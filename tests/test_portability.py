@@ -191,3 +191,24 @@ def test_missing_reference_rejected_before_install(tmp_path: Path) -> None:
     )
     assert result.returncode != 0
     assert not list(root.iterdir())
+
+
+def test_installer_unknown_version_override_and_dirty_preservation(tmp_path: Path) -> None:
+    """Unsupported версия/override не пишут; обычный install сохраняет dirty пользовательские файлы."""
+    root = tmp_path / "dirty"
+    root.mkdir()
+    (root / "README.md").write_text("User dirty README\n")
+    (root / "user.txt").write_text("Untracked user content\n")
+    (root / "AGENTS.override.md").write_text("Active override\n")
+    before = tree(root)
+    assert install(root, "install").returncode == 1
+    assert tree(root) == before
+    (root / "AGENTS.override.md").unlink()
+    assert install(root, "install").returncode == 0
+    assert (root / "README.md").read_text() == "User dirty README\n"
+    assert (root / "user.txt").read_text() == "Untracked user content\n"
+    policy = root / ".ai/workflow.yaml"
+    policy.write_text(policy.read_text().replace("schema_version: 1", "schema_version: 2"))
+    before = tree(root)
+    assert install(root, "update").returncode == 2
+    assert tree(root) == before
